@@ -112,7 +112,7 @@ The model should also provide explanations for the rankings.
 
 # Load environment variables from .env file
 load_dotenv()
-API_KEY = os.getenv("GOOGLE_GEMINI_API_KEY")
+API_KEY = os.getenv("AIzaSyAfAzMdmrnZiSZRcAZsxb4uBaBeLMzS_pU")
 
 # Configure API using a dedicated function
 def configure_api():
