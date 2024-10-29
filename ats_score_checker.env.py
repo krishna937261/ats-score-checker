@@ -6,7 +6,11 @@ from dotenv import load_dotenv
 # from dotenv import load_dotenv  # Uncomment this line if you're using .env file
 
 # Load environment variables
-# load_dotenv()  # Uncomment this line if you're using .env file
+load_dotenv()  
+
+# Manually set your Google Gemini API Key here
+my_api_key = 'AIzaSyAfAzMdmrnZiSZRcAZsxb4uBaBeLMzS_pU'  # Your actual API key
+genai.configure(api_key=my_api_key)  # Configure with your API key
 
 input_prompt = '''
 As an ATS specialist, I meticulously evaluate resumes in tech, software, and data science for a fierce job market. Provide a percentage match, identify keywords, and offer top-tier guidance.
@@ -110,14 +114,10 @@ The model should also provide explanations for the rankings.
 {jd}
 '''
 
-# Load environment variables from .env file
-load_dotenv()
-API_KEY = os.getenv("AIzaSyAfAzMdmrnZiSZRcAZsxb4uBaBeLMzS_pU")
-
 # Configure API using a dedicated function
 def configure_api():
-    if API_KEY:
-        genai.configure(api_key=API_KEY)
+    if my_api_key :
+        genai.configure(api_key=my_api_key )
     else:
         st.error("API key not found. Please set it in the .env file.")
         st.stop()  # Stop execution if the API key is missing
